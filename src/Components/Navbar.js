@@ -1,29 +1,32 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+import React from "react";
+import { Flex } from "@chakra-ui/react";
+import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { Text ,Heading} from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/button";
+import { FaSun, FaMoon } from "react-icons/fa";
+import { useColorMode } from "@chakra-ui/color-mode";
 
-const NavbarComponent = () => {
+function Navbar() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
-        <Navbar.Brand href="#home">My Portfolio</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-          </Nav>
-          <Nav>
-            <Nav.Link href="#deets">Skillset</Nav.Link>
-            <Nav.Link href="#deets">Certifications</Nav.Link>
-            <Nav.Link href="#deets">Projects</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Hobbies
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  )
+    <Flex justify="space-around" align="center" marginTop="15px">
+      <Heading as="h1" fontSize="30px">
+        Ashish Bhandari
+      </Heading>
+      <HStack fontSize="20px" spacing="26px" marginTop="5px">
+        <Text>About</Text>
+        <Text>Skillset</Text>
+        <Text>Projects</Text>
+        <Text>Contact</Text>
+        <IconButton
+          ml={8}
+          icon={isDark ? <FaSun /> : <FaMoon />}
+          onClick={toggleColorMode}
+        ></IconButton>
+      </HStack>
+    </Flex>
+  );
 }
 
-export default NavbarComponent
+export default Navbar;
