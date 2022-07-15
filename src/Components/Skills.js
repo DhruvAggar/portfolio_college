@@ -3,7 +3,12 @@ import { Box, Flex, Heading, SimpleGrid } from "@chakra-ui/react";
 import { AiFillHtml5 } from "react-icons/ai";
 import { IoLogoCss3, IoLogoJavascript } from "react-icons/io";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiExpress, SiMongodb, SiCplusplus } from "react-icons/si";
+import {
+  SiExpress,
+  SiMongodb,
+  SiCplusplus,
+  SiJavascript,
+} from "react-icons/si";
 
 function Skills() {
   return (
@@ -13,21 +18,21 @@ function Skills() {
         <SimpleGrid
           w="60vw"
           columns={{ sm: 2, md: 4 }}
-          spacing="8"
+          spacing="16"
           p="10"
           justifyItems="center"
           rounded="lg"
           color="gray.400"
           fontSize="3rem"
         >
-          <AiFillHtml5 />
-          <IoLogoCss3 />
-          <IoLogoJavascript />
-          <FaReact />
-          <FaNodeJs />
-          <SiExpress />
-          <SiMongodb />
-          <SiCplusplus />
+          <AiFillHtml5 color="red" />
+          <IoLogoCss3 color="blue" />
+          <SiJavascript color="gold" />
+          <FaReact color="cyan" />
+          <FaNodeJs color="green" />
+          <SiExpress color="black" />
+          <SiMongodb color="green" />
+          <SiCplusplus color="royalBlue" />
         </SimpleGrid>
       </Box>
     </Flex>

@@ -5,18 +5,18 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+// import ThreeD from "./components/ThreeD";
 
 function App() {
   return (
     <div className="App">
-      <header>
+      {/* <ThreeD/> */}
         <Navbar />
         <About />
         <Skills />
         <Projects />
         {/* <Contact /> */}
         <Footer />
-      </header>
     </div>
   );
 }

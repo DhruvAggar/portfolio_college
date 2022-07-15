@@ -16,12 +16,12 @@ function About() {
         </Heading>
         <Text paddingBottom="10px">
           A budding{" "}
-          <Text display="inline" color="lightBlue">
+          <Text display="inline" color="ff63c3">
             {" "}
             computer engineer
           </Text>{" "}
           and{" "}
-          <Text display="inline" color="lightBlue">
+          <Text display="inline" color="ff63c3">
             {" "}
             developer
           </Text>
@@ -30,11 +30,11 @@ function About() {
         </Text>
         <Text>
           I am good at{" "}
-          <Text display="inline" color="lightBlue">
+          <Text display="inline" color="ff63c3">
             problem solving
           </Text>{" "}
           and
-          <Text display="inline" color="lightBlue">
+          <Text display="inline" color="ff63c3">
             {" "}
             analytical thinking
           </Text>
@@ -51,19 +51,19 @@ function About() {
             <IconButton
               as="a"
               href="#"
-              aria-label="LinkedIn"
+              aria-label="Codechef"
               icon={<SiCodechef fontSize="1.5rem" />}
             />
             <IconButton
               as="a"
               href="https://www.github.com/ashishgits"
-              aria-label="GitHub"
+              aria-label="Codeforces"
               icon={<SiCodeforces fontSize="1.5rem" />}
             />
             <IconButton
               as="a"
               href="https://www.twitter.com"
-              aria-label="Twitter"
+              aria-label="Leetcode"
               icon={<SiLeetcode fontSize="1.5rem" />}
             />
           </ButtonGroup>
