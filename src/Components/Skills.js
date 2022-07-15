@@ -13,11 +13,13 @@ import {
 function Skills() {
   return (
     <Flex direction="column" align="center">
-      <Box align="center">
-        <Heading margin="4rem 0 2rem 0">Skills</Heading>
+      <Box align="center" w="100vw">
+        <Heading margin="4rem 0 2rem 0" fontSize={"2.5rem"}>
+          Skills
+        </Heading>
         <SimpleGrid
-          w="60vw"
-          columns={{ sm: 2, md: 4 }}
+          w={["100vw", "60vw"]}
+          columns={[3, 4]}
           spacing="16"
           p="10"
           justifyItems="center"

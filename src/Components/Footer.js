@@ -11,12 +11,14 @@ const Footer = () => (
   <Container
     as="footer"
     role="contentinfo"
-    py={{ base: "10", md: "8" }}
+    py={{ base: "5", md: "8" }}
     marginTop="30px"
   >
-    <hr style={{ marginBottom: "25px" }} />
+    <hr style={{ marginBottom: "15px" }} />
     <HStack spacing={{ base: "4", md: "5" }} justify="center">
-      <Text fontSize="sm" color="subtle">
+      <Text
+       fontSize={[12,16]}
+        color="subtle">
         &copy; {new Date().getFullYear()} Ashish Bhandari. All rights reserved.
       </Text>
       <Stack direction="row" justify="top">

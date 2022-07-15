@@ -20,10 +20,24 @@ function Navbar() {
   const isDark = colorMode === "dark";
   return (
     <Box align="center">
-      <Flex w="80vw" justify="space-around" align="center" marginTop="15px">
-        <Heading as="h1" fontSize="2rem">
-          Ashish Bhandari
-        </Heading>
+      <Flex
+        w={["100vw", "80vw"]}
+        justify={["space-between", "space-around"]}
+        align="center"
+        marginTop="15px"
+        paddingLeft={[5, 0]}
+        paddingRight={[5, 0]}
+      >
+        <Show breakpoint="(min-width: 768px)">
+          <Heading as="h1" fontSize="2rem">
+            Ashish Bhandari
+          </Heading>
+        </Show>
+        <Show breakpoint="(max-width: 767px)">
+          <Heading as="h1" fontSize="2.2rem" paddingTop={[2, 0]}>
+            AB.
+          </Heading>
+        </Show>
 
         <HStack fontSize="20px" spacing="26px" marginTop="5px">
           <Show breakpoint="(min-width: 768px)">
@@ -32,6 +46,12 @@ function Navbar() {
             <Text>Projects</Text>
             <Text>Contact</Text>
           </Show>
+
+          <IconButton
+            ml={8}
+            icon={isDark ? <FaSun /> : <FaMoon />}
+            onClick={toggleColorMode}
+          />
           <Show breakpoint="(max-width: 767px)">
             <Menu>
               <MenuButton
@@ -48,11 +68,6 @@ function Navbar() {
               </MenuList>
             </Menu>
           </Show>
-          <IconButton
-            ml={8}
-            icon={isDark ? <FaSun /> : <FaMoon />}
-            onClick={toggleColorMode}
-          ></IconButton>
         </HStack>
       </Flex>
     </Box>
