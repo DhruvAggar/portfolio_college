@@ -13,13 +13,24 @@ import { IconButton } from "@chakra-ui/button";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { Show, Hide } from "@chakra-ui/react";
+import { Show } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
+
+  const MotionBox = motion(Box);
+  const MotionText=motion(Text)
+
   return (
-    <Box align="center">
+    <MotionBox
+      align="center"
+      marginTop={[0, 10]}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{duration:1.1}}
+    >
       <Flex
         w={["100vw", "80vw"]}
         justify={["space-between", "space-around"]}
@@ -29,28 +40,35 @@ function Navbar() {
         paddingRight={[5, 0]}
       >
         <Show breakpoint="(min-width: 768px)">
-          <Heading as="h1" fontSize="2rem">
-            Ashish Bhandari
+          <Heading as="h1" fontSize="2rem" color="#2978b5">
+            Ashish Bhandari.
           </Heading>
         </Show>
         <Show breakpoint="(max-width: 767px)">
-          <Heading as="h1" fontSize="2.2rem" paddingTop={[2, 0]}>
+          <Heading
+            as="h1"
+            fontSize="2.2rem"
+            paddingTop={[2, 0]}
+            color="#2978b5"
+          >
             AB.
           </Heading>
         </Show>
 
         <HStack fontSize="20px" spacing="26px" marginTop="5px">
           <Show breakpoint="(min-width: 768px)">
-            <Text>About</Text>
-            <Text>Skills</Text>
-            <Text>Projects</Text>
-            <Text>Contact</Text>
+            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="https://google.com">Skills</MotionText>
+            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="<Contact/>">About</MotionText>
+            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="<Contact/>">Projects</MotionText>
+            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="<Contact/>">Contact</MotionText>
           </Show>
 
           <IconButton
             ml={8}
             icon={isDark ? <FaSun /> : <FaMoon />}
             onClick={toggleColorMode}
+            color="#2978b5"
+            bg="noBackground"
           />
           <Show breakpoint="(max-width: 767px)">
             <Menu>
@@ -59,6 +77,8 @@ function Navbar() {
                 aria-label="Options"
                 icon={<GiHamburgerMenu />}
                 variant="outline"
+                border="noBorder"
+                onHover={{}}
               />
               <MenuList>
                 <MenuItem>About</MenuItem>
@@ -70,7 +90,7 @@ function Navbar() {
           </Show>
         </HStack>
       </Flex>
-    </Box>
+    </MotionBox>
   );
 }
 

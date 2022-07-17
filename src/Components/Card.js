@@ -5,7 +5,7 @@ import calculator from "../assets/calculator.png";
 function Card(props) {
   const { title, text, imgsrc, alt } = props;
   return (
-    <Box width={["380px", "250px"]}>
+    <Box width={["380px", "250px"]} >
       <Image
         src={calculator}
         alt={alt}
@@ -16,7 +16,7 @@ function Card(props) {
       <Heading as="h3" fontSize="25px" fontWeight="500" align="center" marginTop="10px">
         {title}
       </Heading>
-      <Text align="center">{text}</Text>
+      <Text align="center" marginBottom={"3"}>{text}</Text>
     </Box>
   );
 }
