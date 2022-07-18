@@ -10,16 +10,21 @@ import {
   SiJavascript,
 } from "react-icons/si";
 import { motion, Variants } from "framer-motion";
+import { useColorMode } from "@chakra-ui/color-mode";
+
 
 function Skills() {
   const MotionFlex = motion(Flex);
   const MotionSimpleGrid = motion(SimpleGrid);
 
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+
   return (
     <MotionFlex
       direction="column"
       align="center"
-      color="#444"
+      color={isDark ? "#cdcdff" : "#444"}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.1 }}

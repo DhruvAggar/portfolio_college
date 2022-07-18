@@ -21,7 +21,7 @@ function Navbar() {
   const isDark = colorMode === "dark";
 
   const MotionBox = motion(Box);
-  const MotionText=motion(Text)
+  const MotionText = motion(Text);
 
   return (
     <MotionBox
@@ -29,7 +29,7 @@ function Navbar() {
       marginTop={[0, 10]}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{duration:1.1}}
+      transition={{ duration: 1.1 }}
     >
       <Flex
         w={["100vw", "80vw"]}
@@ -40,7 +40,11 @@ function Navbar() {
         paddingRight={[5, 0]}
       >
         <Show breakpoint="(min-width: 768px)">
-          <Heading as="h1" fontSize="2rem" color="#2978b5">
+          <Heading
+            as="h1"
+            fontSize="2rem"
+            color={isDark ? "#90a0d9" : "#2978b5"}
+          >
             Ashish Bhandari.
           </Heading>
         </Show>
@@ -49,25 +53,72 @@ function Navbar() {
             as="h1"
             fontSize="2.2rem"
             paddingTop={[2, 0]}
-            color="#2978b5"
+            color={isDark ? "#90a0d9" : "#2978b5"}
           >
             AB.
           </Heading>
         </Show>
 
-        <HStack fontSize="20px" spacing="26px" marginTop="5px">
+        <HStack
+          fontSize="20px"
+          spacing="26px"
+          marginTop="5px"
+          color={isDark ? "#cdcdff" : "#444"}
+        >
           <Show breakpoint="(min-width: 768px)">
-            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="https://google.com">Skills</MotionText>
-            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="<Contact/>">About</MotionText>
-            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="<Contact/>">Projects</MotionText>
-            <MotionText whileHover={{ cursor:"pointer", textDecoration:"underline", color:"#2978b5"}} as="a" href="<Contact/>">Contact</MotionText>
+            <MotionText
+              whileHover={{
+                cursor: "pointer",
+                textDecoration: "underline",
+                // color: "#2978b5",
+
+                color: `${isDark ? "#90a0d9" : "#2978b5"}`,
+              }}
+              as="a"
+              href="https://google.com"
+            >
+              Skills
+            </MotionText>
+            <MotionText
+              whileHover={{
+                cursor: "pointer",
+                textDecoration: "underline",
+                color: `${isDark ? "#90a0d9" : "#2978b5"}`,
+              }}
+              as="a"
+              href="<Contact/>"
+            >
+              About
+            </MotionText>
+            <MotionText
+              whileHover={{
+                cursor: "pointer",
+                textDecoration: "underline",
+                color: `${isDark ? "#90a0d9" : "#2978b5"}`,
+              }}
+              as="a"
+              href="<Contact/>"
+            >
+              Projects
+            </MotionText>
+            <MotionText
+              whileHover={{
+                cursor: "pointer",
+                textDecoration: "underline",
+                color: `${isDark ? "#90a0d9" : "#2978b5"}`,
+              }}
+              as="a"
+              href="<Contact/>"
+            >
+              Contact
+            </MotionText>
           </Show>
 
           <IconButton
             ml={8}
             icon={isDark ? <FaSun /> : <FaMoon />}
             onClick={toggleColorMode}
-            color="#2978b5"
+            color={isDark ? "#90a0d9" : "#2978b5"}
             bg="noBackground"
           />
           <Show breakpoint="(max-width: 767px)">

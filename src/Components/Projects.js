@@ -1,15 +1,19 @@
 import Card from "./Card";
 import calculator from "../assets/calculator.png";
 import { Box, Flex, SimpleGrid, Heading } from "@chakra-ui/react";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
+import { useColorMode } from "@chakra-ui/color-mode";
 
 function Projects() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+
   return (
     <Flex
       direction="column"
       align="center"
       marginTop="30px"
-      color="#444"
+      color={isDark ? "#cdcdff" : "#444"}
       as={motion.flex}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
