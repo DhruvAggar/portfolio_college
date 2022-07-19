@@ -12,10 +12,8 @@ import { SiCodechef, SiCodeforces, SiLeetcode } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useColorMode } from "@chakra-ui/color-mode";
 
-
 function About() {
-
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
   const MotionFlex = motion(Flex);
@@ -30,6 +28,7 @@ function About() {
       transition={{ type: "spring", delay: 1.5, stiffness: 120 }}
       height="100vh"
       color="#444"
+      id="about"
     >
       <Box
         w={["92vw", "60vw"]}

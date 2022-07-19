@@ -18,6 +18,7 @@ function Projects() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       height="100vh"
+      id="projects"
     >
       <Box align="center">
         <Heading margin="4rem 0 4rem 0" fontSize={"2.5rem"}>

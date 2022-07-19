@@ -15,6 +15,7 @@ function Contact() {
       as={motion.div}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
+      id="contact"
     >
       <Stack Spacing={10} w={["400px", "700px"]} margin="auto">
         <Heading

@@ -8,20 +8,22 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import { Stack, HStack, VStack } from "@chakra-ui/react";
+import { HStack } from "@chakra-ui/react";
 import { IconButton } from "@chakra-ui/button";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useColorMode } from "@chakra-ui/color-mode";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Show } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { HashLink } from "react-router-hash-link";
+import { Link } from "@chakra-ui/react";
 
 function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
   const MotionBox = motion(Box);
-  const MotionText = motion(Text);
+  const MotionText = motion(Link);
 
   return (
     <MotionBox
@@ -70,23 +72,10 @@ function Navbar() {
               whileHover={{
                 cursor: "pointer",
                 textDecoration: "underline",
-                // color: "#2978b5",
-
                 color: `${isDark ? "#90a0d9" : "#2978b5"}`,
               }}
               as="a"
-              href="https://google.com"
-            >
-              Skills
-            </MotionText>
-            <MotionText
-              whileHover={{
-                cursor: "pointer",
-                textDecoration: "underline",
-                color: `${isDark ? "#90a0d9" : "#2978b5"}`,
-              }}
-              as="a"
-              href="<Contact/>"
+              href="#about"
             >
               About
             </MotionText>
@@ -94,10 +83,23 @@ function Navbar() {
               whileHover={{
                 cursor: "pointer",
                 textDecoration: "underline",
+
                 color: `${isDark ? "#90a0d9" : "#2978b5"}`,
               }}
               as="a"
-              href="<Contact/>"
+              href="#skills"
+            >
+              Skills
+            </MotionText>
+
+            <MotionText
+              whileHover={{
+                cursor: "pointer",
+                textDecoration: "underline",
+                color: `${isDark ? "#90a0d9" : "#2978b5"}`,
+              }}
+              as="a"
+              href="#projects"
             >
               Projects
             </MotionText>
@@ -108,7 +110,7 @@ function Navbar() {
                 color: `${isDark ? "#90a0d9" : "#2978b5"}`,
               }}
               as="a"
-              href="<Contact/>"
+              href="#contact"
             >
               Contact
             </MotionText>

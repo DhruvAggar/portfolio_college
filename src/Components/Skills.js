@@ -9,19 +9,19 @@ import {
   SiCplusplus,
   SiJavascript,
 } from "react-icons/si";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { useColorMode } from "@chakra-ui/color-mode";
-
 
 function Skills() {
   const MotionFlex = motion(Flex);
   const MotionSimpleGrid = motion(SimpleGrid);
 
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
   return (
     <MotionFlex
+      id="skills"
       direction="column"
       align="center"
       color={isDark ? "#cdcdff" : "#444"}
