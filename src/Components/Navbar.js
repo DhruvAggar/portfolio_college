@@ -48,7 +48,7 @@ function Navbar() {
             fontSize="2rem"
             color={isDark ? "#90a0d9" : "#2978b5"}
           >
-            Ashish Bhandari.
+            Dhruv Aggarwal.
           </Heading>
         </Show>
         <Show breakpoint="(max-width: 767px)">

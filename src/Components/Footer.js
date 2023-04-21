@@ -24,7 +24,7 @@ function Footer() {
       <hr style={{ marginBottom: "15px" }} />
       <HStack spacing={{ base: "4", md: "5" }} justify="center">
         <Text fontSize={[12, 16]} color="subtle">
-          &copy; {new Date().getFullYear()} Ashish Bhandari. All rights
+          &copy; {new Date().getFullYear()} Dhruv Aggarwal. All rights
           reserved.
         </Text>
         <Stack direction="row" justify="top">

@@ -39,7 +39,7 @@ function About() {
         <Heading marginBottom="2rem" fontSize={["2.5rem"]}>
           Hi, I'm{" "}
           <Text display="inline" color={isDark ? "#90a0d9" : "#2978b5"}>
-            Ashish{" "}
+            Dhruv{" "}
             <MotionText display="inline" rotate={{ x: 1.5 }}>
               👋
             </MotionText>
