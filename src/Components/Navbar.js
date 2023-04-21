@@ -32,6 +32,7 @@ function Navbar() {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.1 }}
+      viewport={{ once: true }}
     >
       <Flex
         w={["100vw", "80vw"]}

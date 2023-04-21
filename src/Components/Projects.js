@@ -8,17 +8,23 @@ function Projects() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
+  const MotionFlex = motion(Flex);
   return (
-    <Flex
+    <MotionFlex
       direction="column"
       align="center"
       marginTop="30px"
       color={isDark ? "#cdcdff" : "#444"}
-      as={motion.flex}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
       height="100vh"
       id="projects"
+      initial="hidden"
+      whileInView="visible"
+      transition={{ duration: 1.1 }}
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 0 },
+      }}
+      viewport={{ once: true }}
     >
       <Box align="center">
         <Heading margin="4rem 0 4rem 0" fontSize={"2.5rem"}>
@@ -38,23 +44,9 @@ function Projects() {
             alt="cal-pic"
             src={calculator}
           />
-
-          <Card
-            title="Calculator"
-            text="Made with React"
-            alt="cal-pic"
-            src={calculator}
-          />
-
-          <Card
-            title="Calculator"
-            text="Made with React"
-            alt="cal-pic"
-            src={calculator}
-          />
         </SimpleGrid>
       </Box>
-    </Flex>
+    </MotionFlex>
   );
 }
 

@@ -25,10 +25,15 @@ function Skills() {
       direction="column"
       align="center"
       color={isDark ? "#cdcdff" : "#444"}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      initial="hidden"
+      whileInView="visible"
       transition={{ duration: 1.1 }}
-      // height="100vh"
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 0 },
+      }}
+      viewport={{ once: true }}
+      height="100vh"
     >
       <Box align="center" w="98vw">
         <Heading margin="0 0 2rem 0" fontSize={"2.5rem"}>
@@ -43,15 +48,6 @@ function Skills() {
           rounded="lg"
           color="gray.400"
           fontSize="3rem"
-          initial={{ y: "100vh" }}
-          whileInView={{ opacity: 1 }}
-          animate={{ y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            duration: 0.3,
-            delay: 1,
-          }}
         >
           <AiFillHtml5 color="#f06529" />
           <IoLogoCss3 color="#2965f1" />

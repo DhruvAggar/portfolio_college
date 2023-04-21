@@ -7,15 +7,22 @@ function Contact() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
+  const MotionBox = motion(Box);
   return (
-    <Box
+    <MotionBox
       marginTop="100px"
       marginBottom="50px"
       color={isDark ? "#cdcdff" : "#444"}
-      as={motion.div}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
       id="contact"
+      initial="hidden"
+      whileInView="visible"
+      transition={{ duration: 1.1 }}
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 0 },
+      }}
+      viewport={{ once: true }}
+      height="40vh"
     >
       <Stack Spacing={10} w={["400px", "700px"]} margin="auto">
         <Heading
@@ -32,7 +39,7 @@ function Contact() {
           Submit
         </Button>
       </Stack>
-    </Box>
+    </MotionBox>
   );
 }
 
